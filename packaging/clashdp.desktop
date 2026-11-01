@@ -1,0 +1,16 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=clashDP
+Name[zh_CN]=clashDP
+GenericName=Proxy Client
+GenericName[zh_CN]=代理客户端
+Comment=Clash Meta (mihomo) desktop GUI client
+Comment[zh_CN]=基于 mihomo 内核的桌面代理客户端
+Exec=clashdp
+Icon=clashdp
+Terminal=false
+Categories=Network;System;
+Keywords=proxy;clash;vpn;mihomo;
+StartupNotify=true
+StartupWMClass=clashdp

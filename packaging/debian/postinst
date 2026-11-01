@@ -1,0 +1,23 @@
+#!/bin/sh
+# postinst —— 安装完成后自动执行的脚本（以 root 身份运行）
+# 目的：让用户装完就能直接用，包括 TUN 模式，不必再手动敲命令。
+set -e
+
+# 1) 保证内核二进制可执行
+chmod 755 /opt/clashDP/mihomo 2>/dev/null || true
+
+# 2) 给内核加"网络管理"能力 —— TUN 模式必需（建虚拟网卡、改路由）
+#    安装时是 root，可以直接授权，用户之后勾选 TUN 就能用。
+if command -v setcap >/dev/null 2>&1; then
+    if setcap cap_net_admin,cap_net_raw,cap_net_bind_service=+ep /opt/clashDP/mihomo 2>/dev/null; then
+        echo "clashDP: TUN 权限已授予 /opt/clashDP/mihomo"
+    else
+        echo "clashDP: TUN 权限授予失败（不影响普通代理使用，可在程序内点『授权 TUN 权限』重试）"
+    fi
+fi
+
+# 3) 刷新桌面菜单与图标缓存
+update-desktop-database /usr/share/applications >/dev/null 2>&1 || true
+gtk-update-icon-cache -f -t /usr/share/icons/hicolor >/dev/null 2>&1 || true
+
+exit 0

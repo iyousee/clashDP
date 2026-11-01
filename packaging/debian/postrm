@@ -1,0 +1,14 @@
+#!/bin/sh
+# postrm —— 卸载后执行的脚本
+# 说明：故意不动 ~/.config/clashDP（你的订阅、密钥、设置），重装后还在。
+#       只有 purge（dpkg --purge）时才彻底清干净。
+set -e
+
+if [ "$1" = "purge" ]; then
+    # 彻底卸载：连安装目录和用户配置一起删
+    rm -rf /opt/clashDP
+    rm -rf "$HOME/.config/clashDP" 2>/dev/null || true
+fi
+
+update-desktop-database /usr/share/applications >/dev/null 2>&1 || true
+exit 0

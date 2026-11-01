@@ -1,0 +1,6 @@
+# clashDP 依赖清单
+# 安装命令：pip install -r requirements.txt
+PySide6          # 图形界面（Qt for Python），M5 才真正用到
+requests         # 调 mihomo 的 REST 接口（拿节点/测速/切策略）
+websocket-client # 调 mihomo 的 WebSocket（流量/连接/日志实时推送）
+PyYAML           # 读写 mihomo 的 config.yaml

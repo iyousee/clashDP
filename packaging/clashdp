@@ -1,0 +1,6 @@
+#!/bin/sh
+# /usr/bin/clashdp —— 系统里的启动命令（桌面图标点开也是跑它）
+# 作用：设置"已打包"标记，然后用系统自带的 python3 启动程序。
+# 用系统 python3 + 独立依赖目录，不碰系统 Python 环境，卸载时删掉 /opt/clashDP 即可。
+export CLASHDP_PACKAGED=1
+exec /usr/bin/python3 /opt/clashDP/clashdp-launcher.py "$@"

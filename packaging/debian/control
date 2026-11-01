@@ -1,0 +1,24 @@
+Package: clashdp
+Version: @VERSION@
+Architecture: arm64
+Maintainer: clashDP <clashdp@localhost>
+Installed-Size: @SIZE@
+Section: net
+Priority: optional
+Depends: python3 (>= 3.10), libc6 (>= 2.34), libgl1, libglib2.0-0, libfontconfig1, libfreetype6, libdbus-1-3, libx11-6, libx11-xcb1, libxkbcommon0, libxkbcommon-x11-0, libxcb1, libxcb-cursor0, libxcb-icccm4, libxcb-image0, libxcb-keysyms1, libxcb-randr0, libxcb-render-util0, libxcb-shape0, libxcb-xkb1, libxcb-xinerama0, libxcb-sync1, libxcb-shm0
+Recommends: libnotify4
+Description: clashDP - mihomo (Clash.Meta) desktop GUI client
+ A native desktop client for the mihomo (Clash.Meta) proxy kernel,
+ written in Python + PySide6 and tuned for deepin 25 / arm64.
+ .
+ Features:
+  - Manage the mihomo kernel (start / stop / config validation)
+  - Subscription management with one-click update
+  - Proxy group and node list with latency testing
+  - System proxy switching via gsettings
+  - Live traffic and connection monitoring
+  - Built-in kernel log viewer with level filter
+  - Optional TUN mode (kernel gets CAP_NET_ADMIN on install)
+ .
+ The mihomo kernel binary and GeoIP/GeoSite databases are bundled,
+ so no network access is required on first run.
