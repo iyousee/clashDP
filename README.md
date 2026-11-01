@@ -34,7 +34,7 @@ clashDP 是一个运行在 Linux 桌面上的 Clash 图形客户端，用 **Pyth
 
 ### 方式一：安装包（推荐）
 
-从 [Releases](../../releases) 下载对应架构的 `.deb`：
+从 [Releases](https://github.com/iyousee/clashDP/releases) 下载对应架构的 `.deb`：
 
 ```bash
 sudo dpkg -i clashdp_x.y.z_arm64.deb
@@ -47,7 +47,7 @@ sudo apt-get install -f
 ### 方式二：从源码运行
 
 ```bash
-git clone <本仓库地址> clashDP
+git clone https://github.com/iyousee/clashDP.git clashDP
 cd clashDP
 
 # 1. 建虚拟环境并装依赖
